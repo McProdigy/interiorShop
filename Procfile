@@ -1,1 +1,1 @@
-web: gunicorn DjApp.wsgi --log-file - 
+web: gunicorn interiorShop.wsgi --log-file - 
