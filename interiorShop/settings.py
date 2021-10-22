@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-4yt4=yihpa$8564^%$_da3n6ll0*feg@$&e^*v%ezqk@ompp1c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['blooming-lowlands-61671.herokuapp.com']
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['blooming-lowlands-61671.herokuapp.com']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 STRIPE_PUB_KEY = 'jfsifiesfih'
 STRIPE_SECRET_KEY = 'jfisjfiejwfi'
