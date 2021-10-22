@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,8 @@ SECRET_KEY = 'django-insecure-4yt4=yihpa$8564^%$_da3n6ll0*feg@$&e^*v%ezqk@ompp1c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['blooming-lowlands-61671.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 STRIPE_PUB_KEY = 'jfsifiesfih'
 STRIPE_SECRET_KEY = 'jfisjfiejwfi'
@@ -44,6 +47,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_FROM = 'Interiorstore <noreply@jfdklj.com>'
 # Application definition
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -141,7 +146,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -149,14 +153,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
-STATIC_FILES = [
-    BASE_DIR / 'static'
-]
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = [
-    BASE_DIR / 'media/'
-]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

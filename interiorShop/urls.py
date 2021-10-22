@@ -24,5 +24,12 @@ urlpatterns = [
     path('vendors/', include('apps.vendor.urls')),
     path('cart/', include('apps.cart.urls')),
     path('', include('apps.product.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                            document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                            document_root=settings.MEDIA_ROOT)
+
 
